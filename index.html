@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.4;"/>
+    <title>SpbRog50k</title>
+<style>
+body {
+	background-image: url(0.png); /* Путь к фоновому изображению */
+	background-repeat: repeat;
+    background-color: #e0ffff; /* Цвет фона *
+	}
+</style>
+</head>
+ <body>
+  <form action="">
+   <fieldset>
+    <legend>Навигатор</legend>
+    <select onchange="document.location=this.options[this.selectedIndex].value">
+      <option value="#">Выберите карту</option>
+    </select>
+   </fieldset>
+  </form>
+  <script>
+	let maps = [{top_list: "o-36-001-1", map_name: "Санкт-Петербург Запад"},
+				{top_list: "p-35-131-1_2", map_name: "Гаврилово"},
+				{top_list: "p-35-131-3_4", map_name: "Каннельярви"},
+				{top_list: "p-35-143-1_2", map_name: "Семиозерье"},
+				{top_list: "p-35-144-1_2", map_name: "Зеленогорск"},
+				{top_list: "p-35-144-3_4", map_name: "Сестрорецк"},
+				{top_list: "p-36-133-1_2", map_name: "Лесколово"},
+				{top_list: "p-36-133-3_4", map_name: "Парголово"}]
+	let select = document.querySelector("select");
+	for(let i = 0; i < maps.length; i++)
+	select.options[select.options.length] =
+	new Option(maps[i].top_list + ' ' + maps[i].map_name,
+		maps[i].top_list + '/' + maps[i].top_list + '.html');
+  </script>
+ </body>
+</html>
